@@ -1,5 +1,16 @@
+int blu = 255;
+int red = 195;
+int grn = 255;
+int rectPos = 10;
+int rectWide = 200;
+int ball = 255;
+int ballPos = 110;
+int ballWide = 90;
+int empty = 0;
+
+
 void setup() {
-	size(500, 500);
+  size(500, 500);
 }
 
 void draw() {
@@ -16,9 +27,14 @@ void draw() {
 
 // Step 4: Make it so when the program runs the ball slides off the screen exiting at the point (500, 500)
 
-  background(255);
-  stroke(0);
-
+  background(ball);
+  stroke(empty);
+  fill(red, grn, blu);
+  rect(rectPos, rectPos, rectWide, rectWide);
+  //println(mouseX, mouseY)
+  fill(empty, empty, ball);
+  ellipse(ballPos, ballPos, ballWide, ballWide);
+  ballPos = ballPos + 1;
 
   
 
