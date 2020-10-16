@@ -1,16 +1,20 @@
-int blu = 255;
-int red = 195;
-int grn = 255;
+int rectX = random(0, 500);
+int rectY = random(0, 500);
 int rectPos = 10;
-int rectWide = 200;
+int rectLong = random(0, 500);
+int rectWide = random(0, 500);
 int ball = 255;
 int ballPos = 110;
-int ballWide = 90;
+int ballWide = 10;
 int empty = 0;
 
+int r = random(0, 255);
+int g = random(0, 255);
+int b = random(0, 255);
 
 void setup() {
   size(500, 500);
+  background(ball);
 }
 
 void draw() {
@@ -26,16 +30,27 @@ void draw() {
 // For example, “variable1 = variable1 + 2;”. 
 
 // Step 4: Make it so when the program runs the ball slides off the screen exiting at the point (500, 500)
-
-  background(ball);
-  stroke(empty);
-  fill(red, grn, blu);
-  rect(rectPos, rectPos, rectWide, rectWide);
-  //println(mouseX, mouseY)
-  fill(empty, empty, ball);
-  ellipse(ballPos, ballPos, ballWide, ballWide);
-  ballPos = ballPos + 1;
-
   
-
+  int ballX = random(mouseX + 20, mouseX - 20);
+  int ballY = random(mouseY + 20, mouseY - 20);
+  
+  stroke(empty);
+  //println(mouseX, mouseY)
+  int red = random(0, 255);
+  int grn = random(0, 255);
+  int blu = random(0, 255);
+  fill(r, g, b);
+  rect(rectX, rectY, rectLong, rectWide);
+  fill(red, grn, blu);
+  ellipse(ballX, ballY, ballWide, ballWide);
 }
+  void mousePressed() {
+  rectX = random(0, 500);
+  rectY = random(0, 500);
+  rectWide = random(0, 500);
+  rectLong = random(0, 500);
+  r = random(0, 255);
+  g = random(0, 255);
+  b = random(0, 255);
+  background(ball);
+  }
